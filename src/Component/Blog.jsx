@@ -4,7 +4,7 @@ import { articles } from '../data';
 
 const Blog = () => {
     return (
-        <div className={`${styles.paddingX} `}>
+        <div className={`${styles.paddingX} my-8 `}>
             <h1 className="text-center text-3xl font-bold">Blogs</h1>
             <hr className="mt-3 border-1" />
             <div className={` md:px-9 flex flex-wrap justify-around`}>

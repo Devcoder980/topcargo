@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../style.js'
+import styles from '../style.js';
+
 const Navbar = ({ navItems }) => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     const toggleMobileMenu = () => {
         setShowMobileMenu(!showMobileMenu);
+    };
+
+    const handleLinkClick = () => {
+        if (showMobileMenu) {
+            setShowMobileMenu(false);
+        }
     };
 
     return (
@@ -25,7 +32,7 @@ const Navbar = ({ navItems }) => {
                                     key={index}
                                     className="block p-1 cursor-pointer font-sans text-md font-normal leading-normal text-inherit antialiased hover:border-b-2 hover:border-green-500"
                                 >
-                                    <Link to={item.link} className="flex items-center">
+                                    <Link to={item.link} className="flex items-center" onClick={handleLinkClick}>
                                         {item.label}
                                     </Link>
                                 </li>
@@ -50,7 +57,6 @@ const Navbar = ({ navItems }) => {
                                     <span>Log In</span>
                                 </button>
                             </Link>
-
                         </div>
 
                         <button
@@ -96,19 +102,42 @@ const Navbar = ({ navItems }) => {
                                             key={index}
                                             className="block p-1 font-sans text-md font-normal leading-normal text-inherit antialiased hover:border-b-2 hover:border-green-500"
                                         >
-                                            <Link to={item.link} className="flex items-center">
+                                            <Link
+                                                to={item.link}
+                                                className="flex items-center"
+                                                onClick={handleLinkClick}
+                                            >
                                                 {item.label}
                                             </Link>
                                         </li>
                                     ))}
                                 </ul>
+                                <Link to="asktruck">
+                                    <button
+                                        className="middle none center  rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-4  font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                                        type="button"
+                                        data-ripple-light="true"
+                                    >
+                                        <span>Ask trucks</span>
+                                    </button>
+                                </Link>
+                                <Link to="login">
+                                    <button
+                                        className="middle mx-2 none center  rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-4  font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                                        type="button"
+                                        data-ripple-light="true"
+                                    >
+                                        <span>Log In</span>
+                                    </button>
+                                </Link>
+
                             </div>
+
                         </div>
                     )}
                 </div>
             </nav>
         </div>
-
     );
 };
 

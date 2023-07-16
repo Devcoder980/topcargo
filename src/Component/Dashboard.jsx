@@ -30,6 +30,7 @@ export default function IndexPage() {
         setMenu1(false);
         setMenu2(false);
         setMenu3(false);
+        setShow(!show);
     };
 
     // Click handler for History
@@ -38,12 +39,14 @@ export default function IndexPage() {
         setMenu1(true);
         setMenu2(false);
         setMenu3(false);
+        setShow(!show);
     };
     const HandleEditClick = () => {
         setMenu(false);
         setMenu1(false);
         setMenu2(false);
         setMenu3(true);
+        setShow(!show);
     };
 
     const HandleJobClick = () => {
@@ -100,7 +103,7 @@ export default function IndexPage() {
                                     <span className="ml-2"> Dashboard</span>
                                 </div>
                             </li>
-                            <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={HandleEditClick}>
+                            <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={handleHistoryClick}>
                                 <div className="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-puzzle" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" />
@@ -109,7 +112,7 @@ export default function IndexPage() {
                                     <span className="ml-2">History</span>
                                 </div>
                             </li>
-                            <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={handleHistoryClick}>
+                            <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={HandleEditClick}>
                                 <div className="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-puzzle" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" />
@@ -128,13 +131,14 @@ export default function IndexPage() {
                                 <div>
                                     <div className="flex items-center justify-between px-8">
                                         <div className="h-16 w-full bg-slate-900 flex items-center">
-                                            <img src="https://th.bing.com/th/id/OIP.4dcJ_AHTJ81dikKbJ_xBtgHaGw?pid=ImgDet&rs=1" alt="" />
+                                            <span className="text-2xl font-extrabold">Top <span className="text-green-600">Cargo</span></span>
                                         </div>
                                         <div id="closeSideBar" className="flex items-center justify-end h-10 w-10" onClick={() => setShow(!show)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" />
                                                 <line x1={18} y1={6} x2={6} y2={18} />
                                                 <line x1={6} y1={6} x2={18} y2={18} />
+
                                             </svg>
                                         </div>
                                     </div>
@@ -157,7 +161,7 @@ export default function IndexPage() {
                                                 </div>
                                             </Link>
                                         </li>
-                                        <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={handleHistoryClick}>
+                                        <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={handleDashboardClick} >
                                             <div className="flex items-center">
                                                 <div className="w-6 h-6 md:w-8 md:h-8">
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -169,7 +173,7 @@ export default function IndexPage() {
                                                 <span className="ml-2 xl:text-base md:text-2xl text-base">Dashboard</span>
                                             </div>
                                         </li>
-                                        <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" >
+                                        {/* <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" >
                                             <div className="flex items-center">
                                                 <div className="w-6 h-6 md:w-8 md:h-8">
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -180,7 +184,7 @@ export default function IndexPage() {
                                                 </div>
                                                 <span className="ml-2 xl:text-base md:text-2xl text-base">Edit Profile</span>
                                             </div>
-                                        </li>
+                                        </li> */}
                                         <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={handleHistoryClick}>
                                             <div className="flex items-center">
                                                 <div className="w-6 h-6 md:w-8 md:h-8">
@@ -193,7 +197,8 @@ export default function IndexPage() {
                                                 <span className="ml-2 xl:text-base md:text-2xl text-base">History</span>
                                             </div>
                                         </li>
-                                        <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={HandleJobClick}>
+
+                                        <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none" onClick={HandleEditClick}>
                                             <div className="flex items-center">
                                                 <div className="w-6 h-6 md:w-8 md:h-8">
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -202,7 +207,7 @@ export default function IndexPage() {
                                                         <circle cx={12} cy={12} r={9} />
                                                     </svg>
                                                 </div>
-                                                <span className="ml-2 xl:text-base md:text-2xl text-base">Jobs</span>
+                                                <span className="ml-2 xl:text-base md:text-2xl text-base">Customer Support</span>
                                             </div>
                                         </li>
 
@@ -258,15 +263,30 @@ export default function IndexPage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="text-gray-600 mr-8 visible lg:hidden relative" onClick={() => setShow(!show)}>
+                            <div className="text-gray-600 mr-8 flex w-[100%] justify-between  items-center visible lg:hidden relative" onClick={() => setShow(!show)}>
                                 {show ? (
                                     ""
-                                ) : (
-                                    <svg aria-label="Main Menu" aria-haspopup="true" xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-menu cursor-pointer" width={30} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <line x1={4} y1={8} x2={20} y2={8} />
-                                        <line x1={4} y1={16} x2={20} y2={16} />
-                                    </svg>
+                                ) : (<>
+                                    <div>
+                                        <Link
+                                            to="/"
+                                            className="ml-4 block cursor-pointer py-1.5 font-sans text-3xl font-bold leading-normal text-inherit antialiased"
+                                        >
+                                            <span className="text-white">Top <span className="text-green-600">Cargo</span></span>
+                                        </Link>
+
+                                    </div>
+                                    <div>
+                                        <svg aria-label="Main Menu" aria-haspopup="true" xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-menu cursor-pointer" width={30} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <line x1={4} y1={8} x2={20} y2={8} />
+                                            <line x1={4} y1={16} x2={20} y2={16} />
+                                            <line x1={4} y1={24} x2={20} y2={24} />
+                                        </svg>
+                                    </div>
+
+                                </>
+
                                 )}
                             </div>
                         </nav>
@@ -274,8 +294,8 @@ export default function IndexPage() {
                         {/* Remove class [ h-64 ] when adding a card block */}
                         <div className="container mx-auto py-12 md:w-4/5 w-11/12 px-6">
                             {menu && <Profile />}
-                            { menu3 ? <History /> : null}
-                            { menu1 ? <EditProfile /> : null}
+                            {menu1 ? <History /> : null}
+                            {menu3 ? <EditProfile /> : null}
                         </div>
                     </div>
                 </div>
