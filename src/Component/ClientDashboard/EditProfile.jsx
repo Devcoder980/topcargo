@@ -1,10 +1,10 @@
 import React from 'react'
 
-const EditProfile = () => {
+const Support = () => {
     return (
 
-        <div class="flex min-h-screen items-center justify-start bg-white text-black">
-            <div class="mx-auto w-full max-w-lg">
+        <div class="flex h-[100vh]  items-center justify-start bg-white text-black">
+            <div class="mx-auto w-full max-w-lg px-4">
                 <h1 class="text-4xl font-medium">Contact us</h1>
                 <p class="mt-3">Email us at help@domain.com or message us here:</p>
                 <form action="https://api.web3forms.com/submit" class="mt-10">
@@ -27,7 +27,8 @@ const EditProfile = () => {
                 </form>
             </div>
         </div>
+
     )
 }
 
-export default EditProfile
+export default Support

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import SignOutButton from "./SignOutButton.jsx";
 
 
-import EditProfile from "./ClientDashboard/EditProfile.jsx";
+import Support from "./ClientDashboard/EditProfile.jsx";
 export default function IndexPage() {
     const navigate = useNavigate();
     function handleSignOut() {
@@ -20,15 +20,15 @@ export default function IndexPage() {
     const [profile, setProfile] = useState(false);
     const [menu, setMenu] = useState(true);
     const [menu1, setMenu1] = useState(false);
-    const [menu2, setMenu2] = useState(false);
+    // const [menu2, setMenu2] = useState(false);
     const [menu3, setMenu3] = useState(false);
-    const [menu4, setMenu4] = useState(false);
+    // const [menu4, setMenu4] = useState(false);
 
     // Click handler for Dashboard
     const handleDashboardClick = () => {
         setMenu(true);
         setMenu1(false);
-        setMenu2(false);
+        // setMenu2(false);
         setMenu3(false);
         setShow(!show);
     };
@@ -37,22 +37,22 @@ export default function IndexPage() {
     const handleHistoryClick = () => {
         setMenu(false);
         setMenu1(true);
-        setMenu2(false);
+        // setMenu2(false);
         setMenu3(false);
         setShow(!show);
     };
     const HandleEditClick = () => {
         setMenu(false);
         setMenu1(false);
-        setMenu2(false);
+        // setMenu2(false);
         setMenu3(true);
         setShow(!show);
     };
 
-    const HandleJobClick = () => {
-        const navigate = useNavigate();
-        navigate('/jobs');
-    }
+    // const HandleJobClick = () => {
+    //     const navigate = useNavigate();
+    //     navigate('/jobs');
+    // }
 
 
 
@@ -70,7 +70,7 @@ export default function IndexPage() {
                             </Link>
 
                         </div>
-                        <ul aria-orientation="vertical" className=" py-6">
+                        <ul className=" py-6">
                             <li className="pl-6 cursor-pointer  text-sm leading-3 tracking-normal pb-4 pt-5  hover:text-indigo-700 focus:outline-none" onClick={handleDashboardClick}>
                                 <Link to="/">
                                     <div className="flex items-center">
@@ -142,7 +142,7 @@ export default function IndexPage() {
                                             </svg>
                                         </div>
                                     </div>
-                                    <ul aria-orientation="vertical" className=" py-6">
+                                    <ul  className=" py-6">
                                         <li className="pl-6 cursor-pointer  text-sm leading-3 tracking-normal pb-4 pt-5  hover:text-indigo-700 focus:outline-none" onClick={handleDashboardClick}>
                                             <Link to="/">
                                                 <div className="flex items-center">
@@ -156,7 +156,7 @@ export default function IndexPage() {
                                                             <rect x={14} y={14} width={6} height={6} rx={1} />
                                                         </svg>
                                                     </div>
-                                                    <span className="ml-2">Book Trucks</span>
+                                                    <span className="ml-2 text-base">Book Trucks</span>
 
                                                 </div>
                                             </Link>
@@ -270,7 +270,7 @@ export default function IndexPage() {
                                     <div>
                                         <Link
                                             to="/"
-                                            className="ml-4 block cursor-pointer py-1.5 font-sans text-3xl font-bold leading-normal text-inherit antialiased"
+                                            className="ml-4 block cursor-pointer py-1.5 font-sans text-2xl font-bold leading-normal text-inherit antialiased"
                                         >
                                             <span className="text-white">Top <span className="text-green-600">Cargo</span></span>
                                         </Link>
@@ -292,10 +292,10 @@ export default function IndexPage() {
                         </nav>
                         {/* Navigation ends */}
                         {/* Remove class [ h-64 ] when adding a card block */}
-                        <div className="container mx-auto py-12 md:w-4/5 w-11/12 px-6">
+                        <div className="container mx-auto md:py-12 w-[100%] md:w-4/5  px-6">
                             {menu && <Profile />}
                             {menu1 ? <History /> : null}
-                            {menu3 ? <EditProfile /> : null}
+                            {menu3 ? <Support /> : null}
                         </div>
                     </div>
                 </div>
