@@ -6,7 +6,7 @@ import SignOutButton from "./SignOutButton.jsx";
 
 
 import Support from "./ClientDashboard/EditProfile.jsx";
-export default function IndexPage() {
+export default function Dashboard(){
     const navigate = useNavigate();
     function handleSignOut() {
         // Clear local storage
@@ -124,7 +124,7 @@ export default function IndexPage() {
                         </ul>
                     </div>
                     {/*Mobile responsive sidebar*/}
-                    <div className={show ? "w-full h-full absolute z-40  transform  translate-x-0 " : "   w-full h-full absolute z-40  transform -translate-x-full"} id="mobile-nav">
+                    <div className={show ? "w-full  absolute z-40  transform  translate-x-0 " : "   w-full h-full absolute z-40  transform -translate-x-full"} id="mobile-nav">
                         <div className="bg-gray-800 opacity-50 absolute h-full w-full lg:hidden" onClick={() => setShow(!show)} />
                         <div className="absolute z-40 sm:relative w-64 md:w-96 shadow pb-4 bg-slate-900 lg:hidden transition duration-150 ease-in-out h-full">
                             <div className="flex flex-col justify-between h-full w-full">
