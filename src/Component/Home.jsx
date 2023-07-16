@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import img3 from '../assets/img3.jpg';
 import SearchForm from './SearchForm';
 import { dummyData } from '../data.js';
-
+import Testimonial from './Testimonial';
 import styles from '../style';
 import Card from './Card';
 import WhyChoose from './WhyChoose';
-
+import ClientStates from './ClientStates';
+import Login from './Login';
 const AutoSlideBackground = () => {
     const images = [img3];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -39,7 +40,7 @@ const AutoSlideBackground = () => {
                 </div>
                 <div className="flex justify-center mt-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {dummyData.slice(0, 4).map((item) => (
+                        {dummyData.slice(0, 6).map((item) => (
                             <Card key={item.id} item={item} />
                         ))}
                     </div>
@@ -51,6 +52,9 @@ const AutoSlideBackground = () => {
                 </div>
             </div>
             <WhyChoose/>
+            <Testimonial />
+            <ClientStates />
+        
         </>
     );
 };

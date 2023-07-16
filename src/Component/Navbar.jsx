@@ -31,13 +31,28 @@ const Navbar = ({ navItems }) => {
                                 </li>
                             ))}
                         </ul>
-                        <button
-                            className="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-4  font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                            type="button"
-                            data-ripple-light="true"
-                        >
-                            <span>Ask trucks</span>
-                        </button>
+                        <div className=''>
+                            <Link to="asktruck">
+                                <button
+                                    className="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-4  font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                                    type="button"
+                                    data-ripple-light="true"
+                                >
+                                    <span>Ask trucks</span>
+                                </button>
+                            </Link>
+                            <Link to="login">
+                                <button
+                                    className="middle mx-2 none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-4  font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+                                    type="button"
+                                    data-ripple-light="true"
+                                >
+                                    <span>Log In</span>
+                                </button>
+                            </Link>
+
+                        </div>
+
                         <button
                             className="lg:hidden "
                             onClick={toggleMobileMenu}
